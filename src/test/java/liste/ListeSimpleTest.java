@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class ListeSimpleTest {
+ class ListeSimpleTest {
 
     ListeSimple listeATester;
 
@@ -50,6 +50,8 @@ public class ListeSimpleTest {
         listeATester.ajout(2);
         listeATester.ajout(3);
         System.out.println(listeATester);
+        String attendu = "[1, 2, 3]";
+        assertEquals(attendu, listeATester.toString());
     }
 
     @Test
@@ -113,10 +115,12 @@ public class ListeSimpleTest {
     }
 
     @Test
-     void supprimeTousListeVide() {
-        listeATester.supprimePremier(1);
-        assertNull(listeATester.tete);
-        assertEquals(0, listeATester.getSize());
+    void supprimeTousListeVide() {
+       listeATester.supprimePremier(1);
+       listeATester.supprimePremier(2);
+       listeATester.supprimePremier(3);
+       assertNull(listeATester.tete);
+       assertEquals(0, listeATester.getSize());
     }
 
     @Test
