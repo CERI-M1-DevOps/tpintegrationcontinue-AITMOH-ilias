@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
- class ListeSimpleTest {
+class ListeSimpleTest {
 
     ListeSimple listeATester;
 
@@ -50,8 +50,7 @@ import static org.junit.jupiter.api.Assertions.*;
         listeATester.ajout(2);
         listeATester.ajout(3);
         System.out.println(listeATester);
-        String attendu = "[1, 2, 3]";
-        assertEquals(attendu, listeATester.toString());
+        assertEquals("ListeSimple(Noeud(3), Noeud(2), Noeud(1))", listeATester.toString());
     }
 
     @Test
