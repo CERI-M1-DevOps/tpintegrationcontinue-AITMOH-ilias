@@ -1,0 +1,26 @@
+name: Java CI with Maven - Test and package 
+ 
+on: [pull_request] # Ce workflow se déclenche sur un pull request dans le dépôt 
+
+jobs:
+  Salutations:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Java 21 (Corretto)
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'corretto'
+          java-version: '21'
+
+      - name: Build and test with Maven
+        run: mvn -B package
+            
+
+
+
+
+
+
